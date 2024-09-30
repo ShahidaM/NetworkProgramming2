@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number Game</title>
+</head>
+
+<body>
+    <h1>Guess the Number Game</h1>
+    <p>Your score: {{ score }}</p>
+    <p>{{ message }}</p>
+    <form method="post" action="{{ url_for('game') }}">
+        {{ form.hidden_tag() }}
+        {{ form.guess.label }} {{ form.guess(size=20) }}
+        <input type="submit" value="Submit">
+    </form>
+    <form method="post" action="{{ url_for('logout') }}">
+        {{ form.hidden_tag() }}
+        <input type="submit" value="Logout">
+    </form>
+</body>
+
+</html>
